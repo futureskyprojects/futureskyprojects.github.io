@@ -147,10 +147,10 @@ class AppComponent {
         this.screenWidth = 0;
         this.getScreenSize();
     }
-    getScreenSize(event) {
+    getScreenSize() {
         this.screenHeight = window.innerHeight;
         this.screenWidth = window.innerWidth;
-        console.log(this.screenHeight, this.screenWidth);
+        // console.log(this.screenHeight, this.screenWidth);
     }
     ngAfterViewInit() {
         if (!navigator.mediaDevices ||
@@ -184,6 +184,8 @@ class AppComponent {
         this.barcode = 'Chưa có kết quả';
         // this.errorMessage = "W: " + this.screenWidth + " | H: " + this.screenHeight;
         quagga__WEBPACK_IMPORTED_MODULE_1___default.a.init({
+            name: 'Live',
+            type: 'LiveStream',
             inputStream: {
                 constraints: {
                     facingMode: 'environment',
@@ -200,24 +202,8 @@ class AppComponent {
             },
             decoder: {
                 readers: [
-                    'code_128_reader ',
+                    'code_128_reader',
                     'ean_reader',
-                    // {
-                    //   format: "ean_reader",
-                    //config: {
-                    //  supplements: [
-                    //    'ean_5_reader', 'ean_2_reader'
-                    //  ]
-                    //},
-                    'ean_8_reader',
-                    'code_39_reader',
-                    'code_39_vin_reader',
-                    'codabar_reader',
-                    'upc_reader',
-                    'upc_e_reader',
-                    'i2of5_reader',
-                    '2of5_reader',
-                    'code_93_reader',
                 ],
             },
         }, (err) => {
@@ -241,7 +227,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "TH\u1EEC NGHI\u1EC6M D\u00D9NG ANGULAR 10 (v.210104.1)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "TH\u1EEC NGHI\u1EC6M D\u00D9NG ANGULAR 10 (v.210104.2)");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, AppComponent_button_6_Template, 2, 0, "button", 4);
@@ -563,9 +549,7 @@ const environment = {
  *
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-var apiUrl = "";
+ */ 
 
 
 /***/ }),
